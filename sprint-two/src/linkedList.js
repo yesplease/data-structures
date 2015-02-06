@@ -3,10 +3,7 @@ var LinkedList = function(){
   list.head = null;
   list.tail = null;
 
-
   list.addToTail = function(value){
-
-    console.log('this is the value: ', value);
     var newNode = Node(value);
     // newNode.next = list.head;
 
@@ -20,9 +17,6 @@ var LinkedList = function(){
   }
 
   list.removeHead = function(){
-    //this.head = this.head.next;
-    //if this.head.next === null:
-    //set this.head to null
     if(this.head.next === null){
       this.head = null;
     };
@@ -32,19 +26,17 @@ var LinkedList = function(){
   };
 
   list.contains = function(target){
-    if(){
-      return false;
-    } else {
-      return true;
+    var checker = this.head;
+
+    while (checker.value !== target){
+      if (checker.next === null){
+        return false;
+      }
+      checker = checker.next;
     }
-    //look at head to see if it matches the target
-    //if it does then return true
-    //move head to tail
-    //if at terminator
-    //move head to tail
+    return true;
   };
 
-  console.log(list);
   return list;
 };
 
