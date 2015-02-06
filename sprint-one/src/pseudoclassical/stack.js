@@ -24,3 +24,4 @@ Stack.prototype.size = function(){
 };
 
 //cap function name
+var newStack = new Stack()

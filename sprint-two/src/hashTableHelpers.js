@@ -19,9 +19,9 @@ var LimitedArray = function(limit){
     checkLimit(index);
     return storage[index];
   };
-  limitedArray.set = function(index, value){
+  limitedArray.set = function(index, bkt){
     checkLimit(index);
-    storage[index] = value;
+    storage[index] = bkt;
   };
   limitedArray.each = function(callback){
     for(var i = 0; i < storage.length; i++){
