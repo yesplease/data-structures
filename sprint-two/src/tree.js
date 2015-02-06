@@ -20,35 +20,30 @@ treeMethods.addChild = function(value){
 };
 
 treeMethods.contains = function(target){
+  var answer = false;
 
-  if (this.value === target){
+  var innerRecursive = function(node){
+    //control statement to check if node.value ==== target
+    if(node.value === target){
       answer = true;
-      console.log("value equals target");
+      //return;
+    } else {
+      // for(var i = 0; i < node.children.length; i++){
+      //   innerRecursive(node.children[i]);
+      // }
+      _.each(node.children, function(element){
+        innerRecursive(element);
+      })
     }
-  var answer = _.each(this.children, function(element, index, collection){
-    console.log("This is the value " , element.value);
-    console.log("This is the target ", target);
-    if (element.value === target){
-      return true;
-      console.log("value equals target");
-    }
-    console.log("this dot children ", element);
-    return element.contains(target);
-    return false;
-  });
+      //yes set answer to true
+      //return
+    //else loop on node.children if they exist
+      //call innerRecursive(node.children[i]);
+  };
 
-  console.log(answer);
+  innerRecursive(this);
+  console.log(this)
   return answer;
-  //does the value equal the target? y/n
-  //if y then return true
-  //if n then check if this.children.length > 0 y/n
-  //if y for each of the children call contains on this.children[something]
-  //if n then return false
-
-
-
-
-
 };
 
 
@@ -56,6 +51,30 @@ treeMethods.contains = function(target){
  * Complexity: What is the time complexity of the above functions?
  */
 
+  // // if (this.value === target){
+  // //     answer = true;
+  // //     console.log("value equals target");
+  // //   }
+  // // var answer = _.each(this.children, function(element, index, collection){
+  // //   console.log("This is the value " , element.value);
+  // //   console.log("This is the target ", target);
+  // //   console.log("this dot children ", element);
+  // //   return element.contains(target);
+  // //   return false;
+
+  //   var conRecu = function(val){
+
+  //   }
+
+  // });
+
+  // console.log(answer);
+  // return answer;
+  // //does the value equal the target? y/n
+  // //if y then return true
+  // //if n then check if this.children.length > 0 y/n
+  // //if y for each of the children call contains on this.children[something]
+  // //if n then return false
 
 
   // var answer = false;

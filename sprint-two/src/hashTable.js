@@ -5,6 +5,11 @@ var HashTable = function(){
 
 HashTable.prototype.insert = function(k, v){
   var i = getIndexBelowMaxForKey(k, this._limit);
+  var touple = [k,v];
+  this._storage[i].push(touple);
+  //create a touple [k,v]
+  //push this twople into the corresponding bucket
+
 };
 
 HashTable.prototype.retrieve = function(k){
