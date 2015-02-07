@@ -17,8 +17,7 @@ HashTable.prototype.insert = function(k, v){
 HashTable.prototype.retrieve = function(k){
   var i = getIndexBelowMaxForKey(k, this._limit);
   var answer = this._storage.get(i);
-  console.log('ANSWER!: ', answer)
-  // console.log('This is the answer: ', answer)
+  // console.log('ANSWER!: ', answer)
   for(var i = 0; i < answer.length; i++){
     if(answer[i][0] === k){
       return answer[i][1];
@@ -36,14 +35,12 @@ HashTable.prototype.retrieve = function(k){
 
 HashTable.prototype.remove = function(k){
   var i = getIndexBelowMaxForKey(k, this._limit);
-  console.log('Huh: ', answer)
-
   var answer = this._storage.get(i);
   for (var j = 0; j < answer.length; j++){
     if (answer[j][0] === k){
-      console.log("this is the bucket before splicing: ", answer)
+      // console.log("this is the bucket before splicing: ", answer)
       this._storage.get(i).splice(j, 1);
-      console.log("this is the bucket after splicing: ", answer)
+      // console.log("this is the bucket after splicing: ", answer)
     }
   }
 

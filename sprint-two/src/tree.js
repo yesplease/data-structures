@@ -42,7 +42,7 @@ treeMethods.contains = function(target){
   };
 
   innerRecursive(this);
-  console.log(this)
+  // console.log(this)
   return answer;
 };
 

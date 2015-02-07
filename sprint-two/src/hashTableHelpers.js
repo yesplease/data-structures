@@ -17,7 +17,7 @@ var LimitedArray = function(limit){
   var limitedArray = {};
   limitedArray.get = function(index){
     checkLimit(index);
-    console.log(storage);
+     // console.log(storage);
     return storage[index];
   };
   limitedArray.set = function(index, value){
