@@ -20,6 +20,16 @@ describe('binarySearchTree', function() {
     expect(binarySearchTree.right.left.value).to.equal(6);
   });
 
+  it('should return a breadth first crawl over the tree', function(){
+    binarySearchTree.insert(2);
+    binarySearchTree.insert(3);
+    binarySearchTree.insert(7);
+    binarySearchTree.insert(6);
+    binarySearchTree.insert(9);
+    binarySearchTree.insert(4);
+    expect(binarySearchTree.breadthFirstSearch(5)).to.equal([5,2,7,3,6,9,4]);
+  });
+
   it('should have a working "contains" method', function(){
     binarySearchTree.insert(2);
     binarySearchTree.insert(3);
