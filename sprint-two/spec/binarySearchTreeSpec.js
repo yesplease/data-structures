@@ -27,7 +27,7 @@ describe('binarySearchTree', function() {
     binarySearchTree.insert(6);
     binarySearchTree.insert(9);
     binarySearchTree.insert(4);
-    expect(binarySearchTree.breadthFirstSearch(5)).to.equal([5,2,7,3,6,9,4]);
+    expect(binarySearchTree.breadthFirstSearch(5)).to.eql([5,2,7,3,6,9,4]);
   });
 
   it('should have a working "contains" method', function(){
